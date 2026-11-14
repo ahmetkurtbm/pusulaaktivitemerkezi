@@ -1,6 +1,6 @@
 type QueryFilters = Record<string, unknown>;
 type Row = Record<string, unknown>;
-type FakeError = { message: string };
+type FakeError = { message: string; code?: string };
 
 /** login_attempts tablosunu bellekte tutan basit bir Supabase taklidi. */
 export function createFakeSupabase(options: {

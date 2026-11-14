@@ -10,6 +10,9 @@ const MAX_IP_FAILURES = 30;
 /** KVKK aydınlatma metninde söz verilen saklama süresi. */
 const RETENTION_DAYS = 90;
 
+/** Postgres 42P01 ve PostgREST PGRST205: tablo yok / şema önbelleğinde bulunamadı. */
+const MISSING_TABLE_CODES = ["42P01", "PGRST205"];
+
 export const RATE_LIMIT_UNAVAILABLE_MESSAGE = "Giriş denemesi şu anda doğrulanamıyor. Lütfen biraz sonra tekrar deneyin.";
 
 /** Sayım ya da kayıt başarısız olduğunda fırlatılır; çağıran girişe izin vermemeli (503). */
@@ -33,6 +36,11 @@ export function getClientIp(request: Request): string {
  */
 export async function beginAttempt(db: SupabaseClient, scope: "admin" | "parent", ip: string, accountKey: string): Promise<{ blocked: boolean; attemptId: string }> {
   const { data: inserted, error: insertError } = await db.from("login_attempts").insert({ scope, ip, account_key: accountKey, success: false }).select("id").single();
+  // Şema hiç uygulanmamışsa (tablo yok) giriş eskisi gibi sınırsız çalışır; ortam yanlış kurulduysa bu sessizce görünmez kalmasın diye loglanır.
+  if (insertError && MISSING_TABLE_CODES.includes(insertError.code)) {
+    console.error("login_attempts tablosu yok; giriş hız sınırı devre dışı. supabase/migrations/20260726_add_login_attempts.sql uygulanmalı.");
+    return { blocked: false, attemptId: "" };
+  }
   if (insertError || !inserted?.id) throw new RateLimitUnavailableError();
   const attemptId = String(inserted.id);
 
@@ -54,6 +62,7 @@ export async function beginAttempt(db: SupabaseClient, scope: "admin" | "parent"
 
 /** Başarılı girişte beginAttempt'in yazdığı kaydı başarılı olarak günceller. */
 export async function finishAttempt(db: SupabaseClient, attemptId: string, success: boolean): Promise<void> {
+  if (!attemptId) return;
   if (success) await db.from("login_attempts").update({ success: true }).eq("id", attemptId);
   // Süresi dolan kayıtlar ayrı bir zamanlanmış iş gerektirmeden girişlerde temizlenir.
   const expired = new Date(Date.now() - RETENTION_DAYS * 24 * 60 * 60 * 1000).toISOString();

@@ -1,4 +1,4 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { beginAttempt, finishAttempt, getClientIp, RateLimitUnavailableError } from "./rate-limit";
 import { createFakeSupabase, failures } from "../test/fakeSupabase";
@@ -72,6 +72,19 @@ describe("beginAttempt", () => {
   it("throws (fails closed) when the insert returns an error", async () => {
     const db = createFakeSupabase({ loginAttemptsError: { insert: { message: "relation does not exist" } } });
     await expect(beginAttempt(asClient(db), "parent", "1.2.3.4", "ayseece")).rejects.toBeInstanceOf(RateLimitUnavailableError);
+  });
+
+  it("keeps working as before (and logs) when the login_attempts table does not exist", async () => {
+    const logged = vi.spyOn(console, "error").mockImplementation(() => {});
+    for (const code of ["42P01", "PGRST205"]) {
+      const db = createFakeSupabase({ loginAttemptsError: { insert: { message: "relation does not exist", code } } });
+      const result = await beginAttempt(asClient(db), "parent", "1.2.3.4", "ayseece");
+      expect(result).toEqual({ blocked: false, attemptId: "" });
+      await expect(finishAttempt(asClient(db), result.attemptId, true)).resolves.toBeUndefined();
+      expect(db.updates).toEqual([]);
+    }
+    expect(logged).toHaveBeenCalled();
+    logged.mockRestore();
   });
 
   it("throws (fails closed) when the count returns an error", async () => {
