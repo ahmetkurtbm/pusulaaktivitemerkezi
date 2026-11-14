@@ -78,6 +78,13 @@ npm test         # vitest run
 npm run backup   # veritabanı ve fotoğrafları backups/ klasörüne indirir
 ```
 
+## Güvenlik ve sınırlar
+
+- Giriş denemesi şifre kontrolünden önce kaydedilir ve sayılır, bu yüzden paralel isteklerle sınır aşılamaz. Sınırlar: (hesap, IP) çifti 15 dakikada 5, yalnızca hesap 50, IP başına 30 başarısız deneme.
+- Sayaç ya da veritabanı hata verirse giriş reddedilir (503); `login_attempts` tablosu hiç yoksa uyarı loglanır ve giriş eskisi gibi çalışır.
+- Pasifleştirilen velinin sonuç erişimi hemen kesilir; veli girişinde kullanıcı yokken de aynı sürede yanıt verilir; güvenlik başlıkları tanımlıdır.
+- Bilinen sınır: aynı IP'yi paylaşan çok sayıda kullanıcı (ör. okul ağı) IP başına 30 başarısız deneme sınırına takılabilir.
+
 ## İşletim belgeleri
 
 - [Yedekleme ve geri yükleme](docs/YEDEKLEME.md)
