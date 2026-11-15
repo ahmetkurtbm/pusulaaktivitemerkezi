@@ -9,7 +9,7 @@ export default function ContactWhatsAppForm() {
     event.preventDefault();
     const form = new FormData(event.currentTarget);
     const message = [
-      "Merhaba Kids Academy, web sitenizden bilgi almak istiyorum.",
+      "Merhaba Pusula Aktivite Merkezi, web sitenizden bilgi almak istiyorum.",
       "",
       `Veli: ${form.get("parentName")}`,
       `Çocuğun adı: ${form.get("childName")}`,

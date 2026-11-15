@@ -17,26 +17,21 @@ import "./portal-v3.css";
 const baloo = Baloo_2({ subsets: ["latin", "latin-ext"], weight: ["600", "700", "800"], variable: "--font-ka-display", display: "swap" });
 const nunito = Nunito({ subsets: ["latin", "latin-ext"], weight: ["400", "600", "700", "800"], variable: "--font-ka-text", display: "swap" });
 
-const title = "Kids Academy | Eğitim & Aktivite Merkezi";
+const title = "Pusula Aktivite Merkezi | Eğitim & Etkinlik";
 const description = "Osmaniye'de ödev takibi, konu anlatımı, okul öncesi etkinlik, yaz okulu ve atölye programları.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title,
   description,
-  icons: {
-    icon: "/kids-academy-logo.jpeg",
-    shortcut: "/kids-academy-logo.jpeg",
-    apple: "/kids-academy-logo.jpeg",
-  },
   openGraph: {
     title,
     description,
     url: siteUrl,
-    siteName: "Kids Academy",
+    siteName: "Pusula Aktivite Merkezi",
     locale: "tr_TR",
     type: "website",
-    images: [{ url: "/hero-academy.png", width: 1717, height: 916, alt: "Kids Academy ödev ve etkinlik alanı" }],
+    images: [{ url: "/hero-academy.png", width: 1717, height: 916, alt: "Pusula Aktivite Merkezi ödev ve etkinlik alanı" }],
   },
   twitter: {
     card: "summary_large_image",

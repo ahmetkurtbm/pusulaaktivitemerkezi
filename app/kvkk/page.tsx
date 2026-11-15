@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "KVKK Aydınlatma Metni | Kids Academy",
-  description: "Kids Academy'nin kişisel verileri hangi amaçla işlediği, kimlerle paylaştığı ve haklarınız.",
+  title: "KVKK Aydınlatma Metni | Pusula Aktivite Merkezi",
+  description: "Pusula Aktivite Merkezi'nin kişisel verileri hangi amaçla işlediği, kimlerle paylaştığı ve haklarınız.",
 };
 
 // Veri sorumlusunun resmî bilgileri. Unvan ve vergi/MERSİS bilgisi kurumun
 // belgelerindekiyle aynı yazılmalı; metin yayından önce bir hukukçuya okutulmalı.
 const CONTROLLER = {
-  name: "Kids Academy",
+  name: "Pusula Aktivite Merkezi",
   address: "Raufbey Mahallesi, 9552 Sokak No:18/B, Osmaniye 80010",
   phone: "+90 552 415 01 66",
   updated: "29 Ekim 2026",
@@ -81,7 +81,7 @@ const sections: { title: string; body: React.ReactNode }[] = [
 export default function KvkkPage() {
   return <div className="ka ka-legal">
     <header className="ka-wrap ka-legal-head">
-      <Link className="ka-brand" href="/"><img src="/kids-academy-logo.jpeg" alt="" width={44} height={44} /><span><b>Kids Academy</b></span></Link>
+      <Link className="ka-brand" href="/"><img src="/pusula-logo.svg" alt="" width={44} height={44} /><span><b>Pusula Aktivite Merkezi</b></span></Link>
       <Link href="/">← Ana sayfaya dön</Link>
     </header>
     <main className="ka-wrap ka-legal-body">

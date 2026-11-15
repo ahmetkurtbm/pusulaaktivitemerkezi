@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Pusula Aktivite Merkezi">
+  <rect width="512" height="512" rx="112" fill="#14213d"/>
+  <circle cx="256" cy="256" r="178" fill="none" stroke="#f6b81d" stroke-width="18"/>
+  <g stroke="#f6b81d" stroke-width="14" stroke-linecap="round">
+    <path d="M256 62v34M256 416v34M62 256h34M416 256h34"/>
+  </g>
+  <path d="M256 126 296 256 256 386 216 256Z" fill="#f6b81d"/>
+  <path d="M256 126 296 256 256 256Z" fill="#ff6e56"/>
+  <path d="M256 386 216 256 256 256Z" fill="#fff8ec"/>
+  <circle cx="256" cy="256" r="16" fill="#14213d"/>
+</svg>

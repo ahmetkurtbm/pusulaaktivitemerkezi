@@ -50,8 +50,8 @@ const MAPS = "https://maps.google.com/?q=Raufbey+Mahallesi+9552+Sokak+No+18B+Osm
 const whatsapp = (program?: string) =>
   `https://wa.me/905524150166?text=${encodeURIComponent(
     program
-      ? `Merhaba Kids Academy, ${program} programı hakkında bilgi alabilir miyim?`
-      : "Merhaba Kids Academy, programlarınız hakkında bilgi alabilir miyim?",
+      ? `Merhaba Pusula Aktivite Merkezi, ${program} programı hakkında bilgi alabilir miyim?`
+      : "Merhaba Pusula Aktivite Merkezi, programlarınız hakkında bilgi alabilir miyim?",
   )}`;
 
 const WhatsAppIcon = () => <svg viewBox="0 0 32 32" aria-hidden="true" className="ka-wa"><path fill="currentColor" d="M16 3a12.7 12.7 0 0 0-11 19l-2 7 7.2-1.9A12.8 12.8 0 1 0 16 3Zm0 22.8c-2 0-3.8-.5-5.4-1.5l-.4-.2-4.2 1.1 1.1-4.1-.3-.4A9.8 9.8 0 1 1 16 25.8Zm5.4-7.3c-.3-.2-1.8-.9-2-.9-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-1.8-.9-3-1.7-4-3.7-.3-.5.3-.5.9-1.7.1-.2.1-.4 0-.6l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.4-1.2 1.2-1.2 2.9s1.2 3.3 1.4 3.5c.2.2 2.4 3.7 5.9 5.2 2.2 1 3.1 1 4.2.8 1.3-.2 2.3-1 2.6-2 .3-.9.3-1.7.2-1.9-.1-.1-.3-.2-.6-.3Z"/></svg>;
@@ -103,9 +103,9 @@ export default async function Home() {
 
     <header className="ka-header">
       <div className="ka-wrap ka-header-in">
-        <a href="#" className="ka-brand" aria-label="Kids Academy ana sayfa">
-          <img src="/kids-academy-logo.jpeg" alt="" width={48} height={48} />
-          <span><b>Kids Academy</b><small>Eğitim & Aktivite Merkezi</small></span>
+        <a href="#" className="ka-brand" aria-label="Pusula Aktivite Merkezi ana sayfa">
+          <img src="/pusula-logo.svg" alt="" width={48} height={48} />
+          <span><b>Pusula Aktivite Merkezi</b><small>Eğitim & Etkinlik</small></span>
         </a>
         <nav className="ka-nav" aria-label="Ana menü">
           <a href="#programlar">Programlar</a>
@@ -134,7 +134,7 @@ export default async function Home() {
             </ul>
           </div>
           <div className="ka-hero-media">
-            <img src="/hero-academy.png" alt="Kids Academy'de çocuklar masa başında ödev yapıyor" width={1717} height={916} />
+            <img src="/hero-academy.png" alt="Pusula Aktivite Merkezi'nde çocuklar masa başında ödev yapıyor" width={1717} height={916} />
             <div className="ka-hero-badge">
               <ShieldCheck aria-hidden size={22} />
               <span><b>Size özel veli paneli</b>Deneme sonuçları ve ders analizi</span>
@@ -143,7 +143,7 @@ export default async function Home() {
         </div>
       </section>
 
-      <section className="ka-benefits" aria-label="Neden Kids Academy">
+      <section className="ka-benefits" aria-label="Neden Pusula Aktivite Merkezi">
         <div className="ka-wrap ka-benefit-grid">
           {benefits.map(({ title, text, icon: Icon }) => <article key={title} className="ka-benefit">
             <span className="ka-icon"><Icon aria-hidden size={22} /></span>
@@ -218,7 +218,7 @@ export default async function Home() {
       <section id="veli-paneli" className="ka-section ka-panel">
         <div className="ka-wrap ka-split">
           <div className="ka-panel-media">
-            <img src="/hero.png" alt="Kids Academy çalışma alanı" loading="lazy" />
+            <img src="/hero.png" alt="Pusula Aktivite Merkezi çalışma alanı" loading="lazy" />
           </div>
           <div>
             <h2>Gelişimi birlikte izleyelim</h2>
@@ -271,8 +271,8 @@ export default async function Home() {
     <footer className="ka-footer">
       <div className="ka-wrap ka-footer-in">
         <div className="ka-brand ka-brand-footer">
-          <img src="/kids-academy-logo.jpeg" alt="" width={44} height={44} />
-          <span><b>Kids Academy</b><small>Öğren, hareket et, keşfet.</small></span>
+          <img src="/pusula-logo.svg" alt="" width={44} height={44} />
+          <span><b>Pusula Aktivite Merkezi</b><small>Öğren, hareket et, keşfet.</small></span>
         </div>
         <nav aria-label="Alt menü">
           <a href="#programlar">Programlar</a>
@@ -283,7 +283,7 @@ export default async function Home() {
           <Link href="/kvkk">KVKK</Link>
           <Link href="/admin">Yönetim</Link>
         </nav>
-        <p>© {new Date().getFullYear()} Kids Academy · {ADDRESS}</p>
+        <p>© {new Date().getFullYear()} Pusula Aktivite Merkezi · {ADDRESS}</p>
       </div>
     </footer>
 

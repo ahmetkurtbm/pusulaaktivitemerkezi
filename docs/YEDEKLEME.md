@@ -1,6 +1,6 @@
 # Yedekleme ve geri yükleme
 
-Kids Academy'nin bütün verisi Supabase'te durur: veli hesapları, deneme sonuçları, duyurular,
+Pusula Aktivite Merkezi'nin bütün verisi Supabase'te durur: veli hesapları, deneme sonuçları, duyurular,
 etkinlikler, yönetici hesapları ve etkinlik fotoğrafları. Kod GitHub'da olduğu için kaybolmaz;
 kaybolabilecek olan **veridir**. Bu belge verinin nasıl yedekleneceğini ve geri yükleneceğini anlatır.
 

@@ -196,7 +196,7 @@ export default function AdminPage() {
   if (!loggedIn) return <AdminLogin onSubmit={login} message={message} />;
 
   return <main className="adminShell">
-    <aside className="adminSidebar"><Link className="portalLogo inversePortal" href="/"><img src="/kids-academy-logo.jpeg" alt="" width={40} height={40} /><b>Kids Academy</b></Link><nav><a href="#overview">Genel Bakış</a><a href="#announcements">Duyurular</a><a href="#events">Etkinlikler</a><a href="#batch-exam">Toplu Deneme</a><a href="#new-exam">Tekli Deneme</a><a href="#parents">Veli Hesapları</a><a href="#users">{me?.level === "owner" ? "Kullanıcılar" : "Hesabım"}</a></nav><button onClick={async () => { await fetch("/api/admin/logout", { method: "POST" }); location.reload(); }}>Çıkış yap</button></aside>
+    <aside className="adminSidebar"><Link className="portalLogo inversePortal" href="/"><img src="/pusula-logo.svg" alt="" width={40} height={40} /><b>Pusula Aktivite Merkezi</b></Link><nav><a href="#overview">Genel Bakış</a><a href="#announcements">Duyurular</a><a href="#events">Etkinlikler</a><a href="#batch-exam">Toplu Deneme</a><a href="#new-exam">Tekli Deneme</a><a href="#parents">Veli Hesapları</a><a href="#users">{me?.level === "owner" ? "Kullanıcılar" : "Hesabım"}</a></nav><button onClick={async () => { await fetch("/api/admin/logout", { method: "POST" }); location.reload(); }}>Çıkış yap</button></aside>
     <div className="adminMain">
       <header><div><small>YÖNETİM PANELİ</small><h1>Merhaba{me && !me.recovery ? `, ${me.name.split(" ")[0]}` : ""} 👋</h1></div><Link href="/" target="_blank">Siteyi görüntüle ↗</Link></header>
       {message && <div className="formMessage">{message}</div>}

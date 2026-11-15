@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import AuthShell from "../components/auth-shell";
 
-const HELP = `https://wa.me/905524150166?text=${encodeURIComponent("Merhaba Kids Academy, veli paneli kullanıcı adımı / şifremi öğrenmek istiyorum.")}`;
+const HELP = `https://wa.me/905524150166?text=${encodeURIComponent("Merhaba Pusula Aktivite Merkezi, veli paneli kullanıcı adımı / şifremi öğrenmek istiyorum.")}`;
 
 export default function ParentLanding() {
   const router = useRouter();

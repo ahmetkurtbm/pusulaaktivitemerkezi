@@ -1,4 +1,4 @@
-# Kids Academy
+# Pusula Aktivite Merkezi
 
 Bir eğitim kurumu için geliştirilmiş, yönetici tarafından yürütülen bir **admin paneli** ile velilerin çocuklarının deneme/sınav sonuçlarını takip edebildiği bir **veli portalı**ndan oluşan uygulama.
 

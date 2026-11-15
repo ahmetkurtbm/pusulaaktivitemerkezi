@@ -21,9 +21,9 @@ export default function AuthShell({
 }) {
   return <main className="ka-auth">
     <section className="ka-auth-brand">
-      <Link href="/" className="ka-auth-logo" aria-label="Kids Academy ana sayfa">
-        <img src="/kids-academy-logo.jpeg" alt="" width={52} height={52} />
-        <span><b>Kids Academy</b><small>Eğitim & Aktivite Merkezi</small></span>
+      <Link href="/" className="ka-auth-logo" aria-label="Pusula Aktivite Merkezi ana sayfa">
+        <img src="/pusula-logo.svg" alt="" width={52} height={52} />
+        <span><b>Pusula Aktivite Merkezi</b><small>Eğitim & Etkinlik</small></span>
       </Link>
       <div className="ka-auth-pitch">
         <span className="ka-auth-badge">{badge}</span>
