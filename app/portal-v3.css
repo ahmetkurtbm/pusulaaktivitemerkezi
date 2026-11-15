@@ -20,8 +20,8 @@
   --p-red-soft: #ffe6e0;
   --p-radius: 20px;
   --p-shadow: 0 1px 0 rgba(20, 33, 61, 0.04), 0 12px 30px -18px rgba(29, 78, 216, 0.35);
-  --p-display: var(--font-ka-display), "Baloo 2", system-ui, sans-serif;
-  --p-font: var(--font-ka-text), "Nunito", system-ui, sans-serif;
+  --p-display: -apple-system, "Segoe UI", system-ui, sans-serif;
+  --p-font: -apple-system, "Segoe UI", system-ui, sans-serif;
 }
 
 /* ---------- Giriş ekranları ---------- */

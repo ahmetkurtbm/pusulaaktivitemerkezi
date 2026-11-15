@@ -27,11 +27,11 @@
   --ka-purple-ink: #5b3db8;
   --ka-radius: 22px;
   --ka-shadow: 0 1px 0 rgba(20, 33, 61, 0.04), 0 10px 28px -14px rgba(29, 78, 216, 0.28);
-  --ka-display: var(--font-ka-display), "Baloo 2", system-ui, sans-serif;
+  --ka-display: -apple-system, "Segoe UI", system-ui, sans-serif;
 
   background: var(--ka-bg);
   color: var(--ka-text);
-  font-family: var(--font-ka-text), "Nunito", system-ui, sans-serif;
+  font-family: -apple-system, "Segoe UI", system-ui, sans-serif;
   font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -730,7 +730,7 @@
   border-radius: 14px;
   border: 1.5px solid #cdd8ec;
   background: #fbfdff;
-  font: 500 16px var(--font-ka-text), system-ui, sans-serif;
+  font: 500 16px -apple-system, "Segoe UI", system-ui, sans-serif;
   color: var(--ka-ink);
 }
 .ka .contactForm textarea {
@@ -757,7 +757,7 @@
   border-radius: 999px;
   background: var(--ka-green);
   color: #fff;
-  font: 800 17px var(--font-ka-text), system-ui, sans-serif;
+  font: 800 17px -apple-system, "Segoe UI", system-ui, sans-serif;
   cursor: pointer;
 }
 .ka .contactForm button:hover {
@@ -944,7 +944,7 @@
 }
 .ka-legal-body h1 {
   margin: 0;
-  font-family: var(--font-ka-display), sans-serif;
+  font-family: -apple-system, "Segoe UI", sans-serif;
   font-size: clamp(26px, 4vw, 36px);
   line-height: 1.15;
   color: var(--ka-ink);
