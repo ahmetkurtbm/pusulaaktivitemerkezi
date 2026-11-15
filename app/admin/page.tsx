@@ -9,6 +9,7 @@ import EventsSection from "./components/EventsSection";
 import ExamSection from "./components/ExamSection";
 import Overview from "./components/Overview";
 import ParentsSection from "./components/ParentsSection";
+import PaymentsSection from "./components/PaymentsSection";
 import UsersSection from "./components/UsersSection";
 import { buildWhatsAppLink } from "@/lib/whatsapp";
 import { AdminMe, AdminUser, Announcement, emptySubjects, Exam, EventItem, Parent } from "./types";
@@ -196,7 +197,7 @@ export default function AdminPage() {
   if (!loggedIn) return <AdminLogin onSubmit={login} message={message} />;
 
   return <main className="adminShell">
-    <aside className="adminSidebar"><Link className="portalLogo inversePortal" href="/"><img src="/pusula-logo.svg" alt="" width={40} height={40} /><b>Pusula Aktivite Merkezi</b></Link><nav><a href="#overview">Genel Bakış</a><a href="#announcements">Duyurular</a><a href="#events">Etkinlikler</a><a href="#batch-exam">Toplu Deneme</a><a href="#new-exam">Tekli Deneme</a><a href="#parents">Veli Hesapları</a><a href="#users">{me?.level === "owner" ? "Kullanıcılar" : "Hesabım"}</a></nav><button onClick={async () => { await fetch("/api/admin/logout", { method: "POST" }); location.reload(); }}>Çıkış yap</button></aside>
+    <aside className="adminSidebar"><Link className="portalLogo inversePortal" href="/"><img src="/pusula-logo.svg" alt="" width={40} height={40} /><b>Pusula Aktivite Merkezi</b></Link><nav><a href="#overview">Genel Bakış</a><a href="#announcements">Duyurular</a><a href="#events">Etkinlikler</a><a href="#batch-exam">Toplu Deneme</a><a href="#new-exam">Tekli Deneme</a><a href="#parents">Veli Hesapları</a><a href="#payments">Ödemeler</a><a href="#users">{me?.level === "owner" ? "Kullanıcılar" : "Hesabım"}</a></nav><button onClick={async () => { await fetch("/api/admin/logout", { method: "POST" }); location.reload(); }}>Çıkış yap</button></aside>
     <div className="adminMain">
       <header><div><small>YÖNETİM PANELİ</small><h1>Merhaba{me && !me.recovery ? `, ${me.name.split(" ")[0]}` : ""} 👋</h1></div><Link href="/" target="_blank">Siteyi görüntüle ↗</Link></header>
       {message && <div className="formMessage">{message}</div>}
@@ -207,6 +208,7 @@ export default function AdminPage() {
       <BatchExamSection parents={parents} exams={exams} onSaved={async (text) => { setNotify(null); setMessage(text); await load(); }} />
       <ExamSection parents={parents} exams={exams} subjects={subjects} setSubjects={setSubjects} editingExamId={editingExamId} editingExam={editingExam} onSave={saveExam} onCancelEdit={cancelEditExam} onStartEdit={startEditExam} onRemove={(id) => remove("exam", id)} />
       <ParentsSection parents={parents} editingParentId={editingParentId} setEditingParentId={setEditingParentId} resettingPasswordId={resettingPasswordId} setResettingPasswordId={setResettingPasswordId} onCreate={createParent} onUpdate={updateParent} onResetPassword={resetParentPassword} onRemove={remove} />
+      <PaymentsSection />
       {me && <UsersSection me={me} users={adminUsers} setupRequired={usersSetupRequired} onSend={sendUsers} onError={(text) => { setNotify(null); setMessage(text); }} />}
     </div>
   </main>;

@@ -963,3 +963,35 @@ details.ka-auth-help p {
 .adminForm select {
   min-height: 46px;
 }
+
+/* Ödemeler (aidat takibi) */
+.paymentsCard { scroll-margin-top: 20px; }
+.paymentsMonth { display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 700; }
+.paymentsMonth input { min-height: 46px; padding: 0 12px; border: 1px solid var(--p-line); border-radius: 12px; font: inherit; background: #fff; }
+.paymentsSummary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 18px; }
+.paymentsSummary > div { padding: 14px 16px; border-radius: 14px; background: var(--p-blue-soft); }
+.paymentsSummary small { display: block; font-size: 12px; font-weight: 800; letter-spacing: .06em; color: var(--p-muted); }
+.paymentsSummary b { display: block; margin-top: 4px; font: 800 22px var(--p-display, inherit); color: var(--p-ink); }
+.paymentsSummary .paidTotal { color: var(--p-green); }
+.paymentsSummary .dueTotal { color: var(--p-red); }
+.paymentsList { border: 1px solid var(--p-line); border-radius: 14px; overflow: hidden; margin-bottom: 14px; }
+.paymentsHeader, .paymentRow { display: grid; grid-template-columns: minmax(0, 1fr) 150px 140px; align-items: center; gap: 12px; padding: 10px 14px; }
+.paymentsHeader { background: var(--p-blue-soft); font-size: 12px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--p-muted); }
+.paymentRow { border-top: 1px solid var(--p-line); background: #fff; }
+.paymentRow.isPaid { background: var(--p-green-soft); }
+.paymentRow.isDirty { box-shadow: inset 4px 0 0 var(--p-yellow); }
+.paymentName b, .paymentName small { display: block; }
+.paymentName small { color: var(--p-muted); font-size: 13px; margin-top: 2px; }
+.paymentFee { width: 100%; min-height: 42px; padding: 0 10px; border: 1px solid var(--p-line); border-radius: 10px; font: inherit; }
+.paymentPaid { display: flex; align-items: center; gap: 10px; font-weight: 700; }
+.paymentPaid input { width: 22px; height: 22px; accent-color: var(--p-green); cursor: pointer; }
+.paymentPaid em { font-style: normal; font-size: 14px; }
+.paymentsActions { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-top: 14px; }
+.paymentsActions span { color: var(--p-muted); font-size: 14px; }
+.paymentsActions .adminPrimary:disabled { opacity: .5; cursor: not-allowed; }
+@media (max-width: 640px) {
+  .paymentsSummary { grid-template-columns: 1fr; }
+  .paymentsHeader { display: none; }
+  .paymentRow { grid-template-columns: 1fr 1fr; }
+  .paymentName { grid-column: 1 / -1; }
+}
