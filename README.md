@@ -92,4 +92,4 @@ npm run backup   # veritabanı ve fotoğrafları backups/ klasörüne indirir
 
 ## Canlı Demo
 
-[kids-academy-phi.vercel.app](https://kids-academy-phi.vercel.app/)
+[pusulaaktivitemerkezi.vercel.app](https://pusulaaktivitemerkezi.vercel.app/)
