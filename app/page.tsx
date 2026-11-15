@@ -43,8 +43,8 @@ async function getAnnouncements(): Promise<PublicAnnouncement[]> {
 
 const PHONE = "+905524150166";
 const PHONE_LABEL = "0552 415 01 66";
-const ADDRESS = "Raufbey Mah. 9552 Sok. No:18/B, Osmaniye";
-const MAPS = "https://maps.google.com/?q=Raufbey+Mahallesi+9552+Sokak+No+18B+Osmaniye+80010";
+const ADDRESS = "Yıldırım Beyazıt Mah. 14054 Sok. No:12, Osmaniye";
+const MAPS = "https://maps.google.com/?q=Y%C4%B1ld%C4%B1r%C4%B1m+Beyaz%C4%B1t+Mahallesi+14054+Sokak+No+12+Osmaniye";
 
 /** Programa özel hazır WhatsApp mesajı: veli tek dokunuşla doğru konuyla yazar. */
 const whatsapp = (program?: string) =>
@@ -84,7 +84,7 @@ const faqs = [
   ["Hangi programlar var?", "Ödev takip, konu anlatımı, okul öncesi etkinlik, yaz okulu ve atölye & etkinlikler. Programlar çocuğun ihtiyacına göre birlikte planlanır."],
   ["Çocuğumun gelişimini nasıl takip ederim?", "Size özel veli paneli hesabı açılır. Deneme sonuçlarını, ders ders analizi, gelişim grafiğini ve öğretmenin önerdiği çalışma konularını buradan görürsünüz."],
   ["Etkinlik ve duyuruları nereden öğrenirim?", "Duyurular ve etkinlikler bu sayfada ve Instagram hesabımızda paylaşılır; yalnızca sizi ilgilendiren etkinlikler veli panelinize gelir."],
-  ["Merkez nerede?", "Raufbey Mahallesi, 9552 Sokak No:18/B, Osmaniye. Haritada açmak için iletişim bölümündeki adrese dokunabilirsiniz."],
+  ["Merkez nerede?", "Yıldırım Beyazıt Mahallesi, 14054 Sokak No:12, Osmaniye. Haritada açmak için iletişim bölümündeki adrese dokunabilirsiniz."],
 ];
 
 const formatDate = (value: string) => new Date(value).toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" });
@@ -256,7 +256,7 @@ export default async function Home() {
             <p className="ka-lead">Formu doldurun; bilgileriniz WhatsApp&apos;ta hazır bir mesaja dönüşsün ve doğrudan bize ulaşsın.</p>
             <ul className="ka-contact-list">
               <li><a href={`tel:${PHONE}`}><span className="ka-icon"><Phone aria-hidden size={20} /></span><span><small>Telefon / WhatsApp</small>{PHONE_LABEL}</span></a></li>
-              <li><a href={MAPS} target="_blank" rel="noreferrer"><span className="ka-icon"><MapPin aria-hidden size={20} /></span><span><small>Adres</small>Raufbey Mahallesi, 9552 Sokak No:18/B, Osmaniye 80010</span></a></li>
+              <li><a href={MAPS} target="_blank" rel="noreferrer"><span className="ka-icon"><MapPin aria-hidden size={20} /></span><span><small>Adres</small>Yıldırım Beyazıt Mahallesi, 14054 Sokak No:12, Osmaniye</span></a></li>
             </ul>
           </div>
           <div className="ka-card ka-form-card">
@@ -278,7 +278,7 @@ export default async function Home() {
           <a href="#programlar">Programlar</a>
           <a href="#haftalik">Haftalık akış</a>
           <a href="#sss">SSS</a>
-          <a href="https://www.instagram.com/kidsacademy80/" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://www.instagram.com/pusulaktivitemerkezi/" target="_blank" rel="noreferrer">Instagram</a>
           <Link href="/veli">Veli girişi</Link>
           <Link href="/kvkk">KVKK</Link>
           <Link href="/admin">Yönetim</Link>

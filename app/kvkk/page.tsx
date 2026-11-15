@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 // belgelerindekiyle aynı yazılmalı; metin yayından önce bir hukukçuya okutulmalı.
 const CONTROLLER = {
   name: "Pusula Aktivite Merkezi",
-  address: "Raufbey Mahallesi, 9552 Sokak No:18/B, Osmaniye 80010",
+  address: "Yıldırım Beyazıt Mahallesi, 14054 Sokak No:12, Osmaniye",
   phone: "+90 552 415 01 66",
   updated: "29 Ekim 2026",
 };
